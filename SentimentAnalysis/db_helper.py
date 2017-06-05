@@ -2,16 +2,16 @@ import pymysql
 
 hostname = 'localhost'
 username = 'root'
-password = 'Koliko90'
+password = ''
 database = 'im_dump'
 
-def doQuery(conn, queryText) :
-    cur = conn.cursor()
+def doQuery(conn, queryText):
+	cur = conn.cursor()
 	cur.execute(queryText)
 	print("Executin query: ", queryText)
 	return cur
-    # for cnt in cur.fetchall() :
-    #     print(cnt)
+	# for cnt in cur.fetchall() :
+	#     print(cnt)
 
 def db_connect() :
 	myConnection = pymysql.connect( host=hostname, user=username, passwd=password, db=database )
