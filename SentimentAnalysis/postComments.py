@@ -1,14 +1,18 @@
 import db_helper as db 
-
+import pandas as pd
 conn = db.db_connect()
 
-query = 'select content from im_commento where idpost=346036'
+query = 'select * from im_commento'
 
 cur = db.doQuery(conn, query)
 
-for cnt in cur.fetchall():
-    byte_array = str.encode(cnt[0])
-    # print(str(byte_array, 'utf-8'))
-    print(byte_array.decode('utf-8'))
+results = cur.fetchall()
+
+df = pd.DataFrame(results)
+
+print(df.head())
+
+# for cnt in cur.fetchall()[:10]:
+#     print(cnt[0].encode('utf-8'))
 
 db.db_close(conn)

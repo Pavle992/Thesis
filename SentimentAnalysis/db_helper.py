@@ -14,7 +14,7 @@ def doQuery(conn, queryText):
 	#     print(cnt)
 
 def db_connect() :
-	myConnection = pymysql.connect( host=hostname, user=username, passwd=password, db=database )
+	myConnection = pymysql.connect( host=hostname, user=username, passwd=password, db=database, charset='utf8')
 	print("Connected to DB..")
 	return myConnection
 
