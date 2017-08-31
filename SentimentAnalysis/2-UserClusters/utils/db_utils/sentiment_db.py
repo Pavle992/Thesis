@@ -14,5 +14,8 @@ class CommentDbConnection(Database):
 	def fetch_all(self, where=''):
 		return super(CommentDbConnection, self).fetch_all(select=self.select, from_clause=self.table, where=where)
 
+	def fetch_columns(self, columns='*', where=''):
+		return super(CommentDbConnection, self).fetch_all(select=columns, from_clause=self.table, where=where)
+
 	def fetch_by_id(self, id=''):
 		return super(CommentDbConnection, self).fetch_all(select=self.select, from_clause=self.table, where="id='%d'" % id)
