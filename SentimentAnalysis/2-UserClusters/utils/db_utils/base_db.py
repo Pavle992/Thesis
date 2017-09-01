@@ -1,17 +1,18 @@
-import MySQLdb
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, exc
 from sqlalchemy.pool import SingletonThreadPool
+import pandas as pd
+import numpy as np
 
 class Singleton(object):
 	engine = None
-	connection = None	
+	connection = None
 
 	@staticmethod
 	def get_connection(host='localhost', port=3306, user='root', passwd='', db='sentiment_db', charset='utf8mb4', use_unicode=True):
 		if Singleton.engine is None:
-			Singleton.engine = create_engine('mysql+mysqldb://%s:%s@%s:%d/%s?charset=%s&use_unicode=%d' % (user, passwd, localhost, port, charset, use_unicode), poolclass=SingletonThreadPool)	
-		
-		Singleton.connection = Singleton.engine.raw_connection()
+			Singleton.engine = create_engine('mysql+mysqldb://%s:%s@%s:%d/%s?charset=%s&use_unicode=%d' % (user, passwd, host, port, db, charset, use_unicode), poolclass=SingletonThreadPool)
+		Singleton.connection = Singleton.engine.connect()
+
 		return Singleton.connection
 
 class Database(object):
@@ -20,82 +21,92 @@ class Database(object):
 		self.host = host
 		self.port = port
 		self.user = user
-		self.password = passwd
-		self.cursor = None
+		self.passwd = passwd
 		self.connection = None
 
 	def connect(self):
 		if self.connection is not None:
-			print('Connection already exist')
+			print('Db connection already exist')
 		try:
 			self.connection = Singleton.get_connection(
-					db = self.db,
-					host = self.host,
-					port = self.port,
-					user = self.user,
-					passwd = self.passwd,
-					charset = 'utf8mb4',
-					use_unicode = True
+				host = self.host,
+				port = self.port,
+				user = self.user,
+				passwd = self.passwd,
+				db = self.db,
+				charset = 'utf8mb4',
+				use_unicode = True
 				)
-			self.cursor = self.connection.cursor()
-			print('Using database connection %s' % str(self.cursor))
-		except MySQLdb.Error as e:
-			print('Error in connecting to db: %s' % e)
+			print("Database connection created: %s" % str(self.connection))
+		except exc.SQLAlchemyError as e:
+			print("Error in connecting to db: %s" % e)
 
-	def fetch_all(self, select='*', from_clause='', where='', order_by=''):
-		sql = 'SELECT %s FROM %s' % (select, from_clause)
+	def fetch_all(self, select='*', from_clause='', where='', order_by='', data_as_dataframe=True):
+		
+		stmt = 'SELECT %s FROM %s' % (select, from_clause)
 
 		if where != '':
-			sql += ' WHERE %s ' % where 
+			stmt +=' WHERE %s' % where
 
 		if order_by != '':
-			sql += 'ORDER BY %s' % order_by
-
-		self.cursor.execute(sql)
-		return self.cursor.fetch_all()
-
-	def insert(self, table='', column_value={}):
-		columns = ''
-		values = ''
-		for column, value in column_value.items():
-			columns += "'%s'," % column
-			values += "'%s'," % value
-
-		columns = columns[:-1] # remove last comma (,)
-		values = values[:-1] # remove last comma (,)
-
-		sql = "INSERT INTO '%s' VALUES '%s'" % (columns, values)
+			stmt +=' ORDER BY %s' % order_by
 
 		try:
-			self.cursor.execute("SET @@sql_mode:=''")
-			self.cursor.execute(sql)
-			self.connection.commit()
-			print('Inserting into table: %s' % table)
-			print('Setting (%s) to values %s' % (columns, values))
-			print("... %d row%s affected" % (self.cursor.rowcount, 's' if self.cursor.rowcount != 1 else ''))
-		except MySQLdb.Error as e:
-			print('Error inserting in db: %s' % e)
+			results = self.connection.execute(stmt).fetchall()
+			if data_as_dataframe:
+				return self.to_dataframe(results, column_names=select)
+			return results						
+		except exc.SQLAlchemyError as e:
+			print('Error executing query: %s' % e)
 			raise Exception(e)
 
-	def update(self, table='', set={}, where=''):
-		set_query = ''
-		for column, value in set.items():
-			set_query += "'%s' = '%s', " % (column, value)
+	def insert(self, table='', column_value={}):
 
-		set_query = set_query[:-1] # remove last comma (,)
-		sql = 'UPDATE %s SET %s WHERE %s' % (table, set_query, where)
+		columns=""
+		values = ""
+
+		for column, value in column_value.items():
+			columns += "`%s`," % column
+			values += "%s," % value
+
+		columns = columns[:-1] # removing last comma(,)
+		values = values[:-1] # removing last comma(,)
+
+		stmt = "INSERT INTO `%s`.`%s` (%s) VALUES (%s)" % (self.db, table, columns, values)
 		try:
-			self.cursor.execute(sql)
-			self.connection.commit()
+			self.connection.execute(stmt)
+			print("Inserting into table %s" % table)
+			print("Setting (%s) to values (%s)" % (columns, values))
+		except exc.SQLAlchemyError as e:
+			print('Error inserting database: %s' % e)
+
+	def update(self, table, set_values={}, where=''):
+		set_value_string = ""
+		for column, value in set_values.items():
+			set_value_string += "`%s` = '%s',"
+
+		set_value_string = set_value_string[:-1]
+
+		stmt = "UPDATE `%s` SET %s WHERE %s" % (table, set_value_string, where)
+
+		try:
+			self.connection.execute(stmt)
 			print("Updating table %s" % table)
-			print("Setting %s" % set_query)
-			print("Where %s " % where)
-			print("... %d row%s affected" % (self.cursor.rowcount, 's' if self.cursor.rowcount != 1 else ''))
-		except MySQLdb.Error as e:
-			print('Error in updating db: %s' % e)
-
+			print("Setting %s" % set_value_string)
+		except exc.SQLAlchemyError as e:
+			print('Error updating database: %s' % e)
+			raise Exception(e)
 	def close(self):
-		self.cursor.close()
 		self.connection.close()
-		print('Closing database connection %s' % str(self.cursor))
+		print('Closing database connection %s' % str(self.connection))
 
+	def table_names(self):
+		if Singleton.engine is not None:
+			return Singleton.engine.table_names()
+		else:
+			print('Database connection is not created')
+
+	def to_dataframe(self, data, column_names=''):
+		if column_names != '' and column_names != '*':
+			return pd.DataFrame(data, columns=column_names.split(','))
+		return pd.DataFrame(data)
