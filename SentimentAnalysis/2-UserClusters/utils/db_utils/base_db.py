@@ -66,8 +66,8 @@ class Database(object):
 		values = ""
 
 		for column, value in column_value.items():
-			columns += "`%s`," % column
-			values += "%s," % value
+			columns += "%s," % column
+			values += "'%s'," % value
 
 		columns = columns[:-1] # removing last comma(,)
 		values = values[:-1] # removing last comma(,)
