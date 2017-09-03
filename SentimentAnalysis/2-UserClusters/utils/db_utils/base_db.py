@@ -1,3 +1,4 @@
+import MySQLdb
 from sqlalchemy import create_engine, exc
 from sqlalchemy.pool import SingletonThreadPool
 import pandas as pd
@@ -66,6 +67,7 @@ class Database(object):
 		values = ""
 
 		for column, value in column_value.items():
+			value = bytes(value, "utf-8").decode("unicode_escape")
 			columns += "%s," % column
 			values += "'%s'," % value
 
