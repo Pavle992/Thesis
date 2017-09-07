@@ -28,13 +28,21 @@ class SentimentCalculator:
 
 	def __getEmojiSentiment(self, emojis):
 
+		if len(emojis) == 0:
+			return 0
+
 		result = 0
 		for em in emojis:
 			emUnicode = hex(ord(em))[2:].upper()
-			result += self.emojiSentData[emUnicode]
+
+			try:
+				result += self.emojiSentData[emUnicode]
+			except Exception:
+				return 0
+			
 		
 		result /= len(emojis)
-		
+
 		return result
 
 	def __getCombinedSentiment(self, textSent, emojiSent):
@@ -46,6 +54,9 @@ class SentimentCalculator:
 			comb = textSent
 
 		return comb
+
+	def __sanitize(self, text):
+		return text.replace(',', '')
 
 	def calcSentiment(self, text):
 
@@ -62,6 +73,7 @@ class SentimentCalculator:
 		m = emoji_pattern.findall(text)
 		postContent['emojis'] = m
 		postContent['text'] = re.sub(emoji_pattern, '',text)
+		postContent['text'] = self.__sanitize(postContent['text'])
 
 		if (postContent['emojis']):
 			print('emojis found: %s' %postContent['emojis'])
@@ -101,6 +113,5 @@ class SentimentCalculator:
 		print(summedSent)
 		return summedSent
 
-	def calcBatchPostSentiment(self, tableName, tableKey):
-		print('in calc batch sentiment')
+	
 

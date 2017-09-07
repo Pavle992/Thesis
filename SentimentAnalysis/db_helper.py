@@ -46,6 +46,8 @@ def getAllCommentsForPost(idpost):
 	return flattenedResult
 
 def insertSentForPost(idpost, sent):
+	#TODO: check if the postid already exists
+	
 	conn = db_connect()
 
 	query = """ CREATE TABLE IF NOT EXISTS `im_postsentiment` (
