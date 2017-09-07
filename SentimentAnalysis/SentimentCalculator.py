@@ -3,14 +3,17 @@ import db_helper as db
 import re
 from googletrans import Translator
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+import json
+
 
 class SentimentCalculator:
 	
 	
 
 	def __init__(self):
-		pass
-
+		with open('./res/emoji-sentiment.json', 'r') as fp:
+			self.emojiSentData = json.load(fp)
+		
 	def __translate(self, text, targetLng = 'en'):
 		gt = Translator()
 		translation = gt.translate(text, dest = targetLng)
@@ -25,7 +28,14 @@ class SentimentCalculator:
 
 	def __getEmojiSentiment(self, emojis):
 
-		return 0.5
+		result = 0
+		for em in emojis:
+			emUnicode = hex(ord(em))[2:].upper()
+			result += self.emojiSentData[emUnicode]
+		
+		result /= len(emojis)
+		
+		return result
 
 	def __getCombinedSentiment(self, textSent, emojiSent):
 		emojiRegularization = 0 #1 if very important
