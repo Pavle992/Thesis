@@ -31,16 +31,47 @@ class SentimentCalculator:
 			return 0
 
 		result = 0
+		sameEmojiCount = 1
+		prevEmUnicode = ""
+		i = 0
+		increas = False
+
 		for em in emojis:
+
 			emUnicode = hex(ord(em))[2:].upper()
+			if (i != 0):
+				
+				if (emUnicode == prevEmUnicode):
+
+					sameEmojiCount += 1
+	
+					if (sameEmojiCount % 3 == 0):
+						increas = True
+				else:
+					sameEmojiCount = 1
+
+
+			prevEmUnicode = emUnicode
+			i += 1
 
 			try:
 				result += self.emojiSentData[emUnicode]
+
+				if (increas):
+					if (result > 0):
+						result+=0.5
+					else:
+						result-=0.5
+
+					increas = False
 			except Exception:
 				return 0
 			
 		
 		result /= len(emojis)
+
+		if (result > 1):
+			return 1
 
 		return result
 
@@ -57,7 +88,7 @@ class SentimentCalculator:
 	def __sanitize(self, text):
 		return text.replace(',', '')
 
-	def calcSentiment(self, text):
+	def __calcSentiment(self, text):
 
 		print('################################################')
 
@@ -100,17 +131,30 @@ class SentimentCalculator:
 		summedSent = {'text' : 0.0, 'emojis': 0.0, 'combined': 0.0}
 
 		for comment in listOfComments:
-			sentScore = self.calcSentiment(comment)
+			print(comment)
+			if (self.checkSpam(comment)):
+				numOfRows = numOfRows - 1;
+				continue
+
+			sentScore = self.__calcSentiment(comment)
 			summedSent['text'] += sentScore['text']['compound']
 			summedSent['emojis'] += sentScore['emojis']
 			summedSent['combined'] += sentScore['combined']
 
-		summedSent['text'] /= numOfRows
-		summedSent['emojis'] /= numOfRows
-		summedSent['combined'] /= numOfRows
+		if (numOfRows != 0):
+			summedSent['text'] /= numOfRows
+			summedSent['emojis'] /= numOfRows
+			summedSent['combined'] /= numOfRows
 
 		print(summedSent)
 		return summedSent
 
+	def checkSpam(self, commentText):
+	    spam_pattern = "http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+"
+	    result = re.findall(spam_pattern, commentText)
+	    if len(result) == 0:
+	        return False
+	    else:
+	        return True
 	
 
