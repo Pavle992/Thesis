@@ -9,7 +9,6 @@ import json
 class SentimentCalculator:
 	
 	
-
 	def __init__(self):
 		with open('./res/emoji-sentiment.json', 'r') as fp:
 			self.emojiSentData = json.load(fp)
