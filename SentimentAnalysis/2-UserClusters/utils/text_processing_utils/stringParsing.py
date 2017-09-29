@@ -8,10 +8,12 @@ class StringTokenizer(object):
 		self.blob = None
 
 	def __translate(self, text, targetLng = 'en'):
-		gt = Translator()
-		translation = gt.translate(text, dest = targetLng)
-		
-		return translation.text
+		try:
+			gt = Translator()
+			translation = gt.translate(text, dest = targetLng)
+			return translation.text	
+		except Exception as ex:
+			return text	
 
 	def setString(self, text):
 		if text is not None:
@@ -20,5 +22,5 @@ class StringTokenizer(object):
 
 	def getNounPhrases(self):
 		# print(self.blob.noun_phrases)
-		shorterNouns = list(filter(lambda x: len(x)<50, self.blob.noun_phrases))
+		shorterNouns = list(filter(lambda x: len(x)<25, self.blob.noun_phrases))
 		return shorterNouns
