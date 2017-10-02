@@ -1,0 +1,10 @@
+fashion
+beauty
+accessories
+lifestyle
+car
+blog
+food
+luxury
+hair
+design
