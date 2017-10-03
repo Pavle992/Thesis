@@ -31,11 +31,11 @@ for word1 in categories:
             	similarity[word1] += s
             	count[word1] += 1
 
-print(count)           	
+print(count)       	
 for c in categories:
 	
 	similarity[c] /= count[c]
-
+print(similarity)
 #category to assign
-category = max(similarity, key=lambda i: similarity[i])
+category = max(similarity.items(), key=lambda x: x[1])[0]
 print(category)
