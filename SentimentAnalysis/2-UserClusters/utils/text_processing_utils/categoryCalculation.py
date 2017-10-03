@@ -10,11 +10,18 @@ class CategorySimilarity(object):
         self.similarity = {}
         self.count = {}
 
+    def __translate(self, text, targetLng = 'en'):
+        try:
+            gt = Translator()
+            translation = gt.translate(text, dest = targetLng)
+            return translation.text 
+        except Exception as ex:
+            return text
+
     def __resetSimilarities(self):
         for c in self.categories:
             self.similarity[c] = 0
-            self.count[c] = 0
-        
+            self.count[c] = 0        
         return
 
     def getStringCategory(self, stringParam):
@@ -38,12 +45,14 @@ class CategorySimilarity(object):
                     	self.similarity[word1] += s
                     	self.count[word1] += 1
         
-        print(tokens)
-        print(self.similarity)
-        print(self.count)
-
+        # print(tokens)
+        # print(self.similarity)
+        # print(self.count)
         for c in self.categories:        	
-        	self.similarity[c] /= self.count[c]
+            if self.count[c] == 0:
+                self.similarity[c] = 0
+            else:        
+                self.similarity[c] /= self.count[c]
 
         #category to assign
         category = max(self.similarity.items(), key=lambda x: x[1])[0]
