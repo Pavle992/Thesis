@@ -6,7 +6,7 @@ categories = ['fashion', 'beauty', 'accessories', 'lifestyle', 'car', 'blog', 'f
 
 
 conn = db.db_connect()
-query = 'select about from user_social where id=%d' %726
+query = 'select about from user_social where id=%d' %780
 cur = db.doQuery(conn, query)
 result = cur.fetchone()
 db.db_close(conn)
