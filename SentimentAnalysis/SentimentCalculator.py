@@ -76,10 +76,14 @@ class SentimentCalculator:
 		return result
 
 	def __getCombinedSentiment(self, textSent, emojiSent):
-		emojiRegularization = 0 #1 if very important
+		emojiRegularization = 1 #1 if very important
 
-		if emojiRegularization != 0:
+		if textSent != 0 and emojiSent != 0:
 			comb = (textSent + emojiRegularization * emojiSent)/2
+		elif textSent == 0 and emojiSent != 0:
+			comb = emojiSent
+		elif textSent != 0 and emojiSent == 0:
+			comb = textSent
 		else:
 			comb = textSent
 
