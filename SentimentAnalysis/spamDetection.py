@@ -41,3 +41,37 @@ dataset5 = dataset1[dataset5['CONTENT'].map(checkSpam) == False]
 dataset = pd.concat([dataset1, dataset2, dataset3, dataset4, dataset5])
 
 dataset['CLASS'].value_counts()
+
+from nltk import word_tokenize, WordNetLemmatizer
+from nltk.corpus import stopwords
+
+stop = stopwords.words('english')
+flt = ['[', ']', '.', ',', ':', ';', '(', ')']
+stop.extend(flt)
+def preprocess(sentence):
+    
+    lemmatizer = WordNetLemmatizer()
+    return [lemmatizer.lemmatize(word) for word in word_tokenize(sentence) if word not in stop]
+
+
+print(preprocess(dataset.iloc[0,0]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
