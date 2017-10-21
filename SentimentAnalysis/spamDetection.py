@@ -9,7 +9,11 @@ Created on Thu Oct 19 21:02:47 2017
 import pandas as pd
 import numpy as np
 
+from nltk import word_tokenize, WordNetLemmatizer
+from nltk.corpus import stopwords
+
 import re
+
 
 def checkSpam(text):
     spam_pattern = "http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+"
@@ -19,17 +23,18 @@ def checkSpam(text):
     else:
         return True
 
+
 dataset1 = pd.read_csv('./YouTube-Spam-Collection-v1/Youtube01-Psy.csv', sep=',')
 dataset2 = pd.read_csv('./YouTube-Spam-Collection-v1/Youtube02-KatyPerry.csv', sep=',')
 dataset3 = pd.read_csv('./YouTube-Spam-Collection-v1/Youtube03-LMFAO.csv', sep=',')
 dataset4 = pd.read_csv('./YouTube-Spam-Collection-v1/Youtube04-Eminem.csv', sep=',')
 dataset5 = pd.read_csv('./YouTube-Spam-Collection-v1/Youtube05-Shakira.csv', sep=',')
 
-dataset1 = dataset1.iloc[:,3:]
-dataset2 = dataset2.iloc[:,3:]
-dataset3 = dataset3.iloc[:,3:]
-dataset4 = dataset4.iloc[:,3:]
-dataset5 = dataset5.iloc[:,3:]
+dataset1 = dataset1.iloc[:, 3:]
+dataset2 = dataset2.iloc[:, 3:]
+dataset3 = dataset3.iloc[:, 3:]
+dataset4 = dataset4.iloc[:, 3:]
+dataset5 = dataset5.iloc[:, 3:]
 
 # Remove links
 dataset1 = dataset1[dataset1['CONTENT'].map(checkSpam) == False]
@@ -42,36 +47,54 @@ dataset = pd.concat([dataset1, dataset2, dataset3, dataset4, dataset5])
 
 dataset['CLASS'].value_counts()
 
-from nltk import word_tokenize, WordNetLemmatizer
-from nltk.corpus import stopwords
-
 stop = stopwords.words('english')
-flt = ['[', ']', '.', ',', ':', ';', '(', ')']
+flt = ['[', ']', '.', ',', ':', ';', '(', ')', 'i', 'u']
 stop.extend(flt)
+
+from nltk.tokenize import RegexpTokenizer
+
+all_words = []
+tokenizer = RegexpTokenizer(r'\w+')
+
+
 def preprocess(sentence):
-    
+
     lemmatizer = WordNetLemmatizer()
-    return [lemmatizer.lemmatize(word) for word in word_tokenize(sentence) if word not in stop]
+    return [lemmatizer.lemmatize(word.lower()) for word in tokenizer.tokenize(sentence) if word not in stop]
 
 
-print(preprocess(dataset.iloc[0,0]))
+# print(preprocess(dataset.iloc[1, 0]))
+import nltk
+
+for comment in dataset.iloc[:, 0]:
+    all_words.extend(preprocess(comment))
+
+# print(all_words[:100])
+all_words = nltk.FreqDist(all_words)
+#
+word_features = list(all_words.keys())[:100]
+print(word_features)
 
 
+def find_features(comment):
+    features = {}
+
+    for w in word_features:
+        if w in set(preprocess(comment)):
+            features[w] = 1
+        else:
+            features[w] = 0
+
+    return features
 
 
+# print(find_features(dataset.iloc[0, 0]))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+X_train = pd.DataFrame(0, index=np.arange(dataset.shape[0]), columns=word_features)
+print(X_train.shape)
+# X_train.iloc[0, 0] = pd.DataFrame(find_features(dataset.iloc[0, 0]))
+i = 0
+j = 0
+for row in dataset.iloc[:, 0]:
+    feature_vect = find_features(row)
+    X_train.iloc[i, :] = pd.Series(feature_vect)

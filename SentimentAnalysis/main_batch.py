@@ -12,9 +12,6 @@ results = cur.fetchall()
 s = SentimentCalculator()
 
 for r in results[:10]:
-	listOfCom = db.getAllCommentsForPost(r[0])
-	sent = s.calcSummedSentiment(listOfCom)
-	db.insertSentForPost(r[0], sent)
-
-
-
+    listOfCom = db.getAllCommentsForPost(r[0])
+    sent = s.calcSummedSentiment(listOfCom)
+    db.insertSentForPost(r[0], sent)
