@@ -94,7 +94,35 @@ X_train = pd.DataFrame(0, index=np.arange(dataset.shape[0]), columns=word_featur
 print(X_train.shape)
 # X_train.iloc[0, 0] = pd.DataFrame(find_features(dataset.iloc[0, 0]))
 i = 0
-j = 0
+
 for row in dataset.iloc[:, 0]:
     feature_vect = find_features(row)
+    print(feature_vect)
     X_train.iloc[i, :] = pd.Series(feature_vect)
+    i += 1
+
+Y_train = dataset.iloc[:, 1]
+
+# Fitting classifier to the Training set
+from sklearn.naive_bayes import GaussianNB
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X_train, Y_train, test_size=0.25, random_state=0, stratify=Y_train)
+
+models = {
+    'NaiveBayes': GaussianNB()
+}
+
+classifier = models['NaiveBayes']
+classifier.fit(X_train, y_train)
+
+y_pred = classifier.predict(X_test)
+print(y_pred)
+
+from sklearn.metrics import confusion_matrix, f1_score
+cm = confusion_matrix(y_test, y_pred)
+f1 = f1_score(y_test, y_pred, average='binary', pos_label=1)
+
+print(cm)
+print(f1)
