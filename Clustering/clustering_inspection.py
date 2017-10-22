@@ -35,7 +35,7 @@ plotter.plot(columns=[' description'], clusterNum=3)
 # about : Fashion
 # country: Italy, United States
 # city: Milan, Madrid, London
-# category: Personal Blog, Clothing (Brand), Community
+# category: Personal Blog
 # description: Fashion
 
 # # Cluster 1
@@ -43,7 +43,7 @@ plotter.plot(columns=[' description'], clusterNum=3)
 # country: United States
 # city: Los Angeles, New York
 # category: Community
-# description: Accessories, Design
+# description: Design
 
 # # Cluster 2
 # about : Accessories
