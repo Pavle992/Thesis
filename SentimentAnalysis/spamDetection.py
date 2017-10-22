@@ -75,6 +75,11 @@ all_words = nltk.FreqDist(all_words)
 word_features = list(all_words.keys())[:100]
 print(word_features)
 
+import pickle
+
+with open('word_features', 'wb') as fp:
+    pickle.dump(word_features, fp)
+
 
 def find_features(comment):
     features = {}
