@@ -2,8 +2,8 @@ import pymysql
 
 hostname = 'localhost'
 username = 'root'
-password = 'Koliko90'
-database = 'social_networks'
+password = ''#'Koliko90'
+database = 'sentiment_db'#'social_networks'
 
 def doQuery(conn, queryText, cursorType= pymysql.cursors.Cursor):
 	cur = conn.cursor(cursorType)
