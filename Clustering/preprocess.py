@@ -158,7 +158,7 @@ ax.set_ylabel('PC2')
 plt.show(fig)
 
 # datasetCategorical.to_csv('user_social_categorical_clustered.csv', sep='\t', encoding='utf-8')
-df.to_csv('user_social_clustered.csv', sep='\t', encoding='utf-8')
+# df.to_csv('user_social_clustered.csv', sep='\t', encoding='utf-8')
 
 
 
