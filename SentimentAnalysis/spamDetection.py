@@ -97,7 +97,6 @@ i = 0
 
 for row in dataset.iloc[:, 0]:
     feature_vect = find_features(row)
-    print(feature_vect)
     X_train.iloc[i, :] = pd.Series(feature_vect)
     i += 1
 
@@ -115,14 +114,21 @@ models = {
 }
 
 classifier = models['NaiveBayes']
-classifier.fit(X_train, y_train)
+classifier = classifier.fit(X_train, y_train)
 
 y_pred = classifier.predict(X_test)
 print(y_pred)
 
-from sklearn.metrics import confusion_matrix, f1_score
+from sklearn.metrics import confusion_matrix, f1_score, precision_score
 cm = confusion_matrix(y_test, y_pred)
 f1 = f1_score(y_test, y_pred, average='binary', pos_label=1)
+prec = precision_score(y_test, y_pred)
+
 
 print(cm)
 print(f1)
+print(prec)
+
+from sklearn.externals import joblib
+
+joblib.dump(classifier, 'spam_classifier.joblib.pkl', compress=9)
