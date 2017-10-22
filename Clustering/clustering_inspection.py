@@ -29,3 +29,32 @@ plotter.plot(columns=[' description'], clusterNum=2)
 plotter.plot(columns=[' about', ' country'], clusterNum=3)
 plotter.plot(columns=[' city', ' category'], clusterNum=3)
 plotter.plot(columns=[' description'], clusterNum=3)
+
+
+# # Cluster 0
+# about : Fashion
+# country: Italy, United States
+# city: Milan, Madrid, London
+# category: Personal Blog, Clothing (Brand), Community
+# description: Fashion
+
+# # Cluster 1
+# about : Fashion
+# country: United States
+# city: Los Angeles, New York
+# category: Community
+# description: Accessories, Design
+
+# # Cluster 2
+# about : Accessories
+# country: Italy
+# city: Milan
+# category: Clothing (Brand)
+# description: Fashion
+
+# # Cluster 3
+# about : Accessories
+# country: Italy
+# city: Rome
+# category: Clothing (Brand)
+# description: Accessories

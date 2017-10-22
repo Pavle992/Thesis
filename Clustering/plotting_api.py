@@ -18,6 +18,7 @@ class Plotter(object):
 		elif len(columns) == 1:
 			self.fig, self.axes = plt.subplots(nrows=1, ncols=1)
 			self.df.loc[self.df[' cluster']==clusterNum,columns[0]].value_counts().plot(kind='bar', ax=self.axes)
+			self.axes.set_ylabel(columns[0])
 		else:
 			raise ValueError('Cluster number should be 1 or 2')
 
