@@ -1,0 +1,600 @@
+	 about	 city	 country	 category	 description	 cluster
+0	fashion	New Orleans	Italy	Company	fashion	0
+1	blog	Rome	Italy	American Restaurant	accessories	3
+2	accessories	SÃ£o JosÃ©	Spain	Website	food	3
+3	food	Milan	Italy	Pizza Place	food	3
+4	design	Paimpol	France	Cleaning Service	design	1
+5	design	Atlanta	Poland	Community	accessories	1
+6	food	MstÃ³w	Brazil	Community	food	1
+7	food	Torino	Italy	CrÃªperie	fashion	2
+8	design	Caprino Veronese	Italy	Company	fashion	2
+9	fashion	New York	United States	Personal Blog	accessories	1
+10	blog	Paris	Italy	Fashion	fashion	2
+11	fashion	Dalkey	United States	Blogger	blog	1
+12	accessories	Milan	Canada	Clothing (Brand)	accessories	3
+13	fashion	Austin	France	Arts & Humanities Website	fashion	0
+14	car	Los Angeles	United States	Photographer	food	1
+15	fashion	Warsaw	Poland	Entertainment Website	fashion	0
+16	accessories	Naples	Italy	Media/News Company	accessories	3
+17	food	Milan	United States	Product/Service	accessories	1
+18	design	MontrÃ©al	United States	Product/Service	design	1
+19	blog	Warsaw	Poland	Fictional Character	food	1
+20	accessories	Naples	Italy	Clothing (Brand)	fashion	2
+21	fashion	Poznan	United States	Health/Beauty	fashion	0
+22	accessories	Oakland	United States	Company	hair	3
+23	fashion	San Diego	United States	Personal Assistant	fashion	0
+24	fashion	Valletta	Malta	Blogger	fashion	0
+25	accessories	Milan	United States	Internet Marketing Service	accessories	3
+26	car	Wetzikon	Switzerland	Motor Vehicle Company	car	1
+27	beauty	TrÃªs Passos	Brazil	Clothing (Brand)	design	1
+28	design	Dalkey	Poland	Motor Vehicle Company	fashion	0
+29	fashion	Benin-City	Nigeria	Nutritionist	fashion	0
+30	design	Verona	United States	Personal Blog	fashion	0
+31	hair	Mirandola	Italy	Hair Salon	car	3
+32	design	GlyfÃ¡das	Greece	Event	fashion	0
+33	beauty	San Diego	Bangladesh	Community	design	1
+34	blog	Palm Beach	Italy	Magazine	fashion	2
+35	fashion	Huntingdon	Bangladesh	Just For Fun	fashion	0
+36	fashion	Cascais	Greece	Community	design	1
+37	accessories	Pompei	Italy	Makeup Artist	design	3
+38	accessories	Rome	Portugal	Camera/Photo	fashion	2
+39	blog	Glasgow	Austria	Community	accessories	1
+40	design	Jersey City	United States	Driving School	design	1
+41	fashion	Ashburn	Argentina	Clothing (Brand)	fashion	0
+42	car	Gardena	United States	Car Dealership	fashion	0
+43	car	Parabiago	Italy	Hotel	blog	3
+44	accessories	Milan	Italy	Personal Website	fashion	2
+45	food	Moscow	Russia	Car Dealership	food	1
+46	fashion	Sydney	Australia	Fitness Model	accessories	1
+47	fashion	New York	Poland	TV Show	accessories	1
+48	food	Turin	United Kingdom	Consulting Agency	fashion	0
+49	fashion	Brussels	Italy	Personal Blog	hair	0
+50	beauty	Warsaw	Ireland	Magazine	beauty	1
+51	accessories	Benin-City	France	Product/Service	fashion	2
+52	fashion	Minsk Mazowiecki	China	Jewelry/Watches	fashion	0
+53	accessories	DÃ¼sseldorf	Italy	Cars	food	3
+54	fashion	Athens	Canada	App Page	beauty	1
+55	accessories	Czestochowa	United States	Clothing (Brand)	fashion	2
+56	design	Warszawa, Poland	Spain	Food & Beverage Company	fashion	0
+57	accessories	Cheras, Kuala Lumpur	Malaysia	Community	fashion	2
+58	fashion	Cascais	Canada	Product/Service	design	1
+59	design	Frankfurt	Germany	Advertising/Marketing	design	1
+60	blog	Parabiago	United States	Musician/Band	blog	1
+61	design	Turin	Poland	Product/Service	accessories	1
+62	accessories	Dhaka	Bangladesh	Clothing Store	design	3
+63	accessories	Hangzhou	Russia	Cars	blog	3
+64	fashion	Jersey City	Bangladesh	Fashion	fashion	0
+65	design	SÃ£o Bernardo do Campo	Brazil	Architect	fashion	0
+66	design	Florence	Spain	Blogger	design	1
+67	design	Bologna	Italy	Health/Beauty	accessories	3
+68	food	Turin	Italy	Grocery Store	food	3
+69	food	Benin-City	Russia	Community	car	1
+70	accessories	Montecalvoli	United States	Just For Fun	fashion	2
+71	fashion	Dubai	Malaysia	Artist	fashion	0
+72	accessories	North Miami	United States	Website	fashion	2
+73	fashion	Rome	Netherlands	Community	food	1
+74	fashion	Milan	Italy	News & Media Website	fashion	0
+75	accessories	Dhaka	Italy	Clothing (Brand)	fashion	2
+76	fashion	Warsaw	Poland	Artist	fashion	0
+77	fashion	Warsaw	Brazil	Community	accessories	1
+78	accessories	Buenos Aires	Argentina	Makeup Artist	fashion	2
+79	fashion	Madrid	Spain	Entertainment Website	car	1
+80	fashion	Damery	United States	Website	design	1
+81	fashion	Porto	Italy	Organization	fashion	0
+82	fashion	Dublin	Italy	Public Figure	accessories	1
+83	accessories	Cuorgnè	Italy	Clothing (Brand)	accessories	3
+84	fashion	Orlando	Italy	Local & Travel Website	fashion	0
+85	food	North Vancouver	Poland	Community	fashion	0
+86	design	Groningen	Netherlands	Arts & Entertainment	design	1
+87	beauty	Modena	Spain	Personal Blog	fashion	0
+88	beauty	CuorgnÃ¨	United States	Clothing (Brand)	accessories	1
+89	car	Brooklyn	Canada	Community	accessories	1
+90	accessories	Bridgehampton	United States	Art Gallery	accessories	3
+91	fashion	Athens	Germany	Website	fashion	0
+92	fashion	Athens	Greece	Tour Agency	design	1
+93	accessories	Casalecchio di Reno	United States	Cars	car	3
+94	accessories	Naples	Italy	Pet Store	fashion	2
+95	accessories	Vologda	Russia	Clothing Store	food	3
+96	blog	Paimpol	United Arab Emirates	Personal Blog	fashion	0
+97	hair	Brooklyn	Italy	Media/News Company	car	3
+98	fashion	Warszawa, Poland	United States	Personal Blog	accessories	1
+99	accessories	New York	United States	Accessories	accessories	3
+100	design	Czestochowa	United States	Community	fashion	0
+101	fashion	Los Angeles	Netherlands	Personal Blog	fashion	0
+102	food	Glasgow	Italy	Community	design	3
+103	food	Roma	Italy	Personal Blog	fashion	2
+104	accessories	New York	Canada	Baby Goods/Kids Goods	fashion	2
+105	accessories	Parma	Italy	Clothing (Brand)	fashion	2
+106	accessories	Senigallia	Italy	Local Business	accessories	3
+107	luxury	Bangalore	Italy	Reference Website	food	3
+108	blog	Milan	Italy	Fashion Designer	design	3
+109	accessories	SÃ£o JosÃ©	United States	Retail Company	fashion	2
+110	hair	Mirandola	Poland	Home Decor	fashion	0
+111	fashion	Moscow	Russia	Retail Company	accessories	1
+112	accessories	Batna	Algeria	Jewelry/Watches	fashion	2
+113	fashion	Paris	United States	Website	food	1
+114	fashion	London	United States	Community	fashion	0
+115	accessories	Florence	Italy	Shopping & Retail	fashion	2
+116	fashion	Palermo	Italy	Hair Salon	fashion	0
+117	fashion	Madrid	United States	Clothing (Brand)	fashion	0
+118	luxury	Fawkham	Italy	Magazine	design	3
+119	food	Bologna	Italy	Beauty, Cosmetic & Personal Care	accessories	3
+120	accessories	Los Angeles	United States	Musician/Band	design	1
+121	design	Damery	France	Art Gallery	accessories	1
+122	design	Colchester	United Kingdom	Automotive Repair Shop	accessories	1
+123	food	Rome	Italy	Sandwich Shop	fashion	2
+124	fashion	Sant'Arcangelo di Romagna	Brazil	Community	design	1
+125	design	Burlington	Italy	Personal Blog	food	3
+126	accessories	Porto	Belgium	Clothing (Brand)	fashion	2
+127	accessories	Brussels	United Kingdom	Public Figure	accessories	3
+128	fashion	Toronto	Canada	Interior Design Studio	fashion	0
+129	accessories	Milan	Italy	Burger Restaurant	accessories	3
+130	car	New York	Italy	Photographer	beauty	3
+131	accessories	Rome	Poland	Website	design	3
+132	car	Brussels	Belgium	Towing Service	car	1
+133	design	Bangalore	India	Blogger	fashion	0
+134	accessories	Bernareggio	Italy	Beauty Salon	design	3
+135	fashion	Sant'Arcangelo di Romagna	Italy	Website	accessories	1
+136	design	Tel Aviv	Israel	Design & Fashion	design	1
+137	food	Erbusco	United States	Wine/Spirits	fashion	0
+138	blog	Brussels	Israel	Clothing (Brand)	fashion	0
+139	hair	Indianapolis	United States	Hair Salon	fashion	0
+140	fashion	Naples	Italy	Personal Blog	fashion	0
+141	accessories	Caprino Veronese	Israel	Cars	food	3
+142	food	London	United Kingdom	Public Service	food	1
+143	accessories	Rome	Poland	Fashion Model	accessories	3
+144	beauty	Ashburn	India	Public Figure	hair	1
+145	beauty	North Vancouver	India	Public Figure	fashion	0
+146	fashion	Paris	Italy	Other	fashion	0
+147	fashion	Madrid	Australia	Movie	fashion	0
+148	beauty	Biberach an der RiÃ	France	Artist	beauty	1
+149	luxury	Fuengirola	Spain	Real Estate	accessories	1
+150	fashion	Dubai	United Arab Emirates	Entrepreneur	fashion	0
+151	blog	Toronto	Russia	Community	accessories	1
+152	hair	Fuengirola	Belgium	Community	fashion	0
+153	accessories	Florence	Italy	Society & Culture Website	accessories	3
+154	food	Paris	France	Product/Service	food	1
+155	car	Brussels	Belgium	Towing Service	car	1
+156	fashion	Naples	Italy	Personal Blog	fashion	0
+157	accessories	Czestochowa	Poland	Clothing (Brand)	fashion	2
+158	fashion	Mondo	Italy	Health & Wellness Website	fashion	0
+159	car	Parabiago	Italy	Hotel	blog	3
+160	food	Milan	Italy	Fast Food Restaurant	food	3
+161	fashion	Perth	Italy	Health & Wellness Website	fashion	0
+162	design	London	United States	Community	food	1
+163	fashion	Sestola	Italy	Community	fashion	0
+164	fashion	Miami	Belgium	Clothing (Brand)	fashion	0
+165	luxury	Cheras, Kuala Lumpur	Germany	Company	design	1
+166	blog	London	Australia	Community	accessories	1
+167	accessories	Brescia	Italy	Musician/Band	accessories	3
+168	beauty	Orlando	United States	Shopping & Retail	design	1
+169	fashion	Caprino Veronese	United States	Clothing (Brand)	accessories	1
+170	fashion	Aalsmeer	Netherlands	Florist	fashion	0
+171	design	Frankfurt	Germany	Advertising/Marketing	design	1
+172	fashion	Bernareggio	United Kingdom	Book	accessories	1
+173	fashion	London	France	Movie	food	1
+174	hair	Frankfurt	Germany	Motor Vehicle Company	accessories	1
+175	fashion	Czestochowa	Italy	Artist	car	0
+176	blog	Yangon	Myanmar	Musician	blog	1
+177	design	Caprino Veronese	Italy	Company	design	3
+178	fashion	North Miami	United States	Women's Clothing Store	accessories	1
+179	fashion	Barcelona	United States	Clothing (Brand)	fashion	0
+180	design	London	United States	Public Figure	accessories	1
+181	fashion	Benin-City	Nigeria	Nutritionist	fashion	0
+182	fashion	Sondrio	Italy	Society & Culture Website	design	1
+183	accessories	All Over The World	Poland	Reference Website	fashion	2
+184	accessories	Montevarchi	Italy	Bridal Shop	accessories	3
+185	fashion	Ashburn	United States	Health/Beauty	food	1
+186	car	Brussels	Belgium	Towing Service	car	1
+187	fashion	Dubai	United Arab Emirates	Entrepreneur	fashion	0
+188	fashion	Warsaw	Switzerland	Product/Service	fashion	0
+189	accessories	Barcelona	Spain	Artist	design	3
+190	blog	New York	India	Musician/Band	blog	1
+191	blog	Beverly Hills	United States	Photographer	beauty	1
+192	accessories	DÃ¼sseldorf	Germany	Arts & Entertainment	blog	3
+193	car	Milan	Greece	Personal Blog	design	1
+194	accessories	Dalkey	Brazil	Product/Service	design	3
+195	fashion	Casalecchio di Reno	Italy	Interest	fashion	0
+196	accessories	Buenos Aires	Argentina	Shopping & Retail	fashion	2
+197	fashion	San Diego	United States	Personal Assistant	fashion	0
+198	accessories	Huntingdon	United Kingdom	Artist	design	3
+199	blog	Madrid	Italy	Blogger	fashion	2
+200	fashion	Wetzikon	Poland	Recreation & Sports Website	fashion	0
+201	car	Wetzikon	Switzerland	Motor Vehicle Company	car	1
+202	fashion	Forest Hills	United Kingdom	Personal Blog	design	1
+203	beauty	Dhaka	Italy	Community	design	3
+204	fashion	Ardmore	Brazil	News & Media Website	fashion	0
+205	accessories	Milan	United States	Clothing (Brand)	accessories	3
+206	design	Burlington	Poland	Public Figure	accessories	1
+207	fashion	New York	Switzerland	Clothing (Brand)	accessories	1
+208	car	Poznan	Poland	Car Dealership	fashion	0
+209	accessories	Naples	Italy	Media/News Company	accessories	3
+210	car	Milan	United States	News & Media Website	design	1
+211	design	Jersey City	United States	Driving School	design	1
+212	accessories	Hof bei Salzburg	Austria	Athlete	fashion	2
+213	accessories	New York	United States	Accessories	accessories	3
+214	accessories	Åochocin	Italy	Website	accessories	3
+215	fashion	New York	United States	Nonprofit Organization	design	1
+216	accessories	Bristol	United Kingdom	Personal Blog	fashion	2
+217	blog	Los Angeles	Myanmar	Entertainment Website	car	1
+218	fashion	North Vancouver	Canada	Image Consultant	fashion	0
+219	fashion	Buenos Aires	United States	Magazine	fashion	0
+220	fashion	Kalamazoo	United States	Community	accessories	1
+221	blog	MontrÃ©al	Australia	Artist	accessories	1
+222	design	Perth	Australia	Education	fashion	0
+223	fashion	Colchester	Austria	Clothing (Brand)	fashion	0
+224	fashion	Sestola	Italy	Restaurant	accessories	1
+225	accessories	Porto	Portugal	Business Center	design	3
+226	fashion	CriciÃºma	Poland	Burger Restaurant	food	1
+227	fashion	Dubai	Italy	Community	fashion	0
+228	fashion	Madrid	Spain	Fashion Designer	fashion	0
+229	design	Turin	Italy	Grocery Store	food	3
+230	fashion	London	United States	Magazine	car	1
+231	design	Paimpol	France	Cleaning Service	design	1
+232	accessories	Rome	Italy	Personal Blog	accessories	3
+233	accessories	Colchester	Belgium	Cars	car	3
+234	hair	Burlington	Canada	Hair Salon	accessories	1
+235	accessories	Termoli	China	Artist	food	3
+236	car	Dubai	United Arab Emirates	Automotive, Aircraft & Boat	car	1
+237	accessories	Bridgehampton	United States	Art Gallery	accessories	3
+238	hair	Mirandola	Italy	Hair Salon	design	3
+239	hair	Buenos Aires	Belgium	Hair Salon	fashion	0
+240	accessories	San Diego	Spain	Clothing (Brand)	blog	3
+241	fashion	Atlanta	Portugal	Sports Team	car	1
+242	fashion	Swindon	United Kingdom	Health/Beauty	fashion	0
+243	fashion	Madrid	Spain	Entertainment Website	fashion	0
+244	accessories	New York	Italy	Baby Goods/Kids Goods	blog	3
+245	fashion	Frankfurt	Israel	Artist	fashion	0
+246	design	Damery	France	Champagne Bar	accessories	1
+247	accessories	Austin	Algeria	Baby Goods/Kids Goods	accessories	3
+248	accessories	Mondo	Democratic Republic of the Congo	Food & Beverage Company	fashion	2
+249	food	Porto	Portugal	Cars	design	1
+250	accessories	Vologda	Russia	Clothing Store	food	3
+251	fashion	Sant'Arcangelo di Romagna	United Kingdom	Clothing (Brand)	accessories	1
+252	car	Los Angeles	United States	Cars	design	1
+253	food	Frankfurt	Italy	Personal Blog	fashion	2
+254	design	Porto	Poland	TV Show	car	1
+255	lifestyle	Vologda	China	Website	car	1
+256	beauty	CuorgnÃ¨	Italy	Hair Extensions Service	hair	3
+257	accessories	Beverly Hills	Italy	Community	accessories	3
+258	car	Fawkham	United Kingdom	Shopping & Retail	accessories	1
+259	accessories	Parabiago (MI) Italy	United Kingdom	Jewelry/Watches	accessories	3
+260	food	Milan	Italy	Personal Website	food	3
+261	fashion	Mirandola	Spain	Personal Blog	fashion	0
+262	hair	New York	United Kingdom	Personal Blog	accessories	1
+263	design	Warszawa, Poland	Belgium	Magazine	accessories	1
+264	food	Rome	United States	Community	fashion	0
+265	accessories	Florence	United Kingdom	Website	accessories	3
+266	car	Modena	Italy	Transportation Service	fashion	2
+267	fashion	London	United Kingdom	Clothing (Brand)	fashion	0
+268	fashion	Fawkham	United Kingdom	Cars	fashion	0
+269	fashion	Toronto	Poland	Website	fashion	0
+270	fashion	Rome	Italy	Personal Website	design	1
+271	hair	Porto	France	Cars	design	1
+272	car	Los Angeles	United States	Cars	fashion	0
+273	design	Bangalore	India	Blogger	fashion	0
+274	accessories	Kalamazoo	Spain	Website	fashion	2
+275	design	Bernareggio	United States	Food & Beverage Company	accessories	1
+276	beauty	Austin	United States	Society & Culture Website	design	1
+277	accessories	Moscow	United States	Jewelry/Watches	accessories	3
+278	fashion	Catania	United Kingdom	Public Figure	blog	1
+279	blog	London	Malta	Personal Blog	fashion	0
+280	beauty	Milan	Italy	Community	car	3
+281	fashion	New York	Italy	Society & Culture Website	fashion	0
+282	food	Ardmore	United States	Website	fashion	0
+283	car	Brussels	Italy	Magazine	car	3
+284	car	Brussels	Belgium	Towing Service	car	1
+285	accessories	Montevarchi	Italy	Bridal Shop	accessories	3
+286	fashion	Ashburn	United States	Health/Beauty	food	1
+287	accessories	Piacenza	Italy	Interior Design Studio	car	3
+288	design	Czestochowa	Italy	Food & Beverage Company	food	3
+289	hair	Montevarchi	Brazil	Public Figure	hair	1
+290	fashion	Los Angeles	United States	Public Figure	fashion	0
+291	accessories	Porto	United States	Clothing (Brand)	design	1
+292	fashion	Kuweit	Kuwait	Community	fashion	0
+293	fashion	New Delhi	India	Nonprofit Organization	fashion	0
+294	design	GlyfÃ¡das	Italy	Just For Fun	food	3
+295	accessories	New York	United States	Performance & Event Venue	accessories	3
+296	fashion	Poznan	Netherlands	Personal Blog	fashion	0
+297	design	New York	United States	Personal Website	hair	1
+298	accessories	Turin	Italy	Athlete	accessories	3
+299	food	Porto	United States	Community	accessories	1
+300	design	Buenos Aires	Canada	Community	accessories	1
+301	luxury	Frankfurt	United States	News & Media Website	accessories	1
+302	fashion	Dubai	United Arab Emirates	Entrepreneur	fashion	0
+303	fashion	Aalsmeer	Austria	Clothing (Brand)	fashion	0
+304	blog	Brussels	Italy	Magazine	fashion	2
+305	hair	Mirandola	Canada	Health/Beauty	beauty	1
+306	fashion	Turin	Italy	Public Figure	fashion	0
+307	accessories	Milan	Poland	App Page	accessories	3
+308	accessories	Bristol	United States	Cars	fashion	2
+309	fashion	CriciÃºma	Brazil	Women's Clothing Store	fashion	0
+310	accessories	Atlanta	Italy	Public Figure	fashion	2
+311	blog	CriciÃºma	United States	Personal Blog	fashion	0
+312	fashion	Damery	Germany	Personal Blog	beauty	1
+313	fashion	Milan	United States	Personal Website	fashion	0
+314	fashion	New York	Democratic Republic of the Congo	Clothing (Brand)	fashion	0
+315	fashion	Gardena	United States	Automotive, Aircraft & Boat	fashion	0
+316	fashion	Caprino Veronese	Italy	Religious Organization	accessories	1
+317	food	Warsaw	Nigeria	Product/Service	accessories	1
+318	car	Gardena	United States	Car Dealership	fashion	0
+319	accessories	Catania	Malaysia	Artist	accessories	3
+320	accessories	Beverly Hills	Italy	Clothing (Brand)	design	3
+321	fashion	Bucharest	United States	Clothing (Brand)	fashion	0
+322	design	Milan	Italy	New American Restaurant	fashion	2
+323	blog	New York	Australia	Clothing (Brand)	fashion	0
+324	accessories	Rome	Poland	Musician/Band	fashion	2
+325	car	London	United Kingdom	Automotive Parts Store	fashion	0
+326	accessories	Montevarchi	Germany	Cars	food	3
+327	fashion	Porto	United States	Personal Blog	accessories	1
+328	fashion	PiotrkÃ³w Trybunalski	Italy	Cars	fashion	0
+329	design	Westminster	Italy	Company	fashion	2
+330	accessories	Barcelona	Italy	App Page	fashion	2
+331	food	Caprino Veronese	Italy	Consulting Agency	fashion	2
+332	fashion	Milan	Italy	News & Media Website	fashion	0
+333	hair	New Orleans	Italy	Health/Beauty	fashion	2
+334	hair	LogroÃ±o	Spain	Baby Goods/Kids Goods	fashion	0
+335	fashion	Poznan	Poland	Professional Service	fashion	0
+336	fashion	London	Italy	Clothing (Brand)	fashion	0
+337	fashion	Bridgehampton	Italy	Community	design	1
+338	accessories	Milan	Italy	Thai Restaurant	fashion	2
+339	accessories	Naples	Italy	Pet Store	accessories	3
+340	fashion	Montreal	Canada	Makeup Artist	fashion	0
+341	design	San Diego	Poland	Community	car	1
+342	beauty	Bucharest	Romania	Community	fashion	0
+343	beauty	Åochocin	Poland	Automotive, Aircraft & Boat	car	1
+344	accessories	Palm Beach	United States	Home Decor	accessories	3
+345	fashion	Casalecchio di Reno	France	Personal Blog	fashion	0
+346	fashion	Westminster	United States	Media/News Company	fashion	0
+347	fashion	Milan	Italy	News & Media Website	fashion	0
+348	fashion	Sant'Arcangelo di Romagna	Italy	Website	accessories	1
+349	blog	Tel Aviv	Italy	Public Figure	fashion	2
+350	fashion	Glasgow	United States	Artist	accessories	1
+351	design	New Delhi	India	Professional Service	fashion	0
+352	design	Milan	Italy	Artist	accessories	3
+353	accessories	Barcelona	Spain	Artist	design	3
+354	blog	All Over The World	Germany	Musician/Band	blog	1
+355	blog	Beverly Hills	United States	Photographer	fashion	0
+356	design	DÃ¼sseldorf	Germany	Arts & Entertainment	car	1
+357	accessories	SÃ£o Bernardo do Campo	United States	Website	accessories	3
+358	accessories	Benin-City	Russia	Personal Blog	fashion	2
+359	accessories	North Vancouver	Italy	Product/Service	food	3
+360	fashion	Casalecchio di Reno	Italy	Interest	fashion	0
+361	accessories	Buenos Aires	Argentina	Shopping & Retail	fashion	2
+362	fashion	San Diego	United States	Personal Assistant	fashion	0
+363	accessories	Huntingdon	United Kingdom	Artist	design	3
+364	blog	Naples	Italy	Blogger	fashion	2
+365	fashion	New York	United States	Nonprofit Organization	design	1
+366	fashion	Porto	Malta	Recreation & Sports Website	fashion	0
+367	car	Wetzikon	Switzerland	Motor Vehicle Company	car	1
+368	fashion	Dubai	Italy	Personal Blog	design	1
+369	beauty	Sestola	Russia	Community	design	1
+370	fashion	Batna	United Kingdom	News & Media Website	fashion	0
+371	accessories	Piacenza	Australia	Clothing (Brand)	accessories	3
+372	design	Czestochowa	United Kingdom	Public Figure	car	1
+373	accessories	Bristol	United Kingdom	Personal Blog	fashion	2
+374	fashion	North Vancouver	Canada	Image Consultant	fashion	0
+375	blog	MontrÃ©al	Italy	Artist	fashion	2
+376	fashion	Dubai	United States	Clothing (Brand)	accessories	1
+377	design	Perth	Australia	Education	fashion	0
+378	car	Poznan	Poland	Car Dealership	fashion	0
+379	accessories	Naples	Italy	Media/News Company	accessories	3
+380	fashion	Sestola	Italy	Restaurant	accessories	1
+381	car	PiotrkÃ³w Trybunalski	Italy	News & Media Website	design	3
+382	design	Jersey City	United States	Driving School	design	1
+383	accessories	Hof bei Salzburg	Austria	Athlete	accessories	3
+384	accessories	New York	United States	Accessories	accessories	3
+385	fashion	Caprino Veronese	Australia	Magazine	accessories	1
+386	accessories	Frankfurt	Spain	Community	accessories	3
+387	fashion	Dublin	United Arab Emirates	Clothing (Brand)	fashion	0
+388	accessories	Porto	Portugal	Business Center	design	3
+389	fashion	Los Angeles	Nigeria	Burger Restaurant	food	1
+390	fashion	New York	Italy	Community	fashion	0
+391	fashion	Madrid	Spain	Fashion Designer	fashion	0
+392	fashion	Orlando	Italy	Magazine	design	1
+393	design	Paimpol	France	Cleaning Service	design	1
+394	accessories	Rome	Italy	Personal Blog	accessories	3
+395	design	Turin	Italy	Grocery Store	food	3
+396	design	Damery	France	Wine/Spirits	accessories	1
+397	accessories	London	United Arab Emirates	Baby Goods/Kids Goods	accessories	3
+398	accessories	Sondrio	Israel	Cars	car	3
+399	hair	Burlington	Canada	Hair Salon	accessories	1
+400	accessories	Beverly Hills	United Kingdom	Artist	fashion	2
+401	car	Dubai	United Arab Emirates	Automotive, Aircraft & Boat	car	1
+402	accessories	Bridgehampton	United States	Art Gallery	accessories	3
+403	hair	Mirandola	Italy	Hair Salon	design	3
+404	hair	Jersey City	Italy	Hair Salon	design	3
+405	accessories	Naples	Italy	Clothing (Brand)	blog	3
+406	fashion	Caprino Veronese	Poland	Sports Team	design	1
+407	fashion	Swindon	United Kingdom	Health/Beauty	fashion	0
+408	fashion	Madrid	Spain	Entertainment Website	fashion	0
+409	accessories	Roma	Portugal	Baby Goods/Kids Goods	fashion	2
+410	fashion	Dubai	Spain	Artist	food	1
+411	accessories	Mondo	Democratic Republic of the Congo	Food & Beverage Company	fashion	2
+412	food	Porto	Portugal	Cars	design	1
+413	accessories	Vologda	Russia	Clothing Store	food	3
+414	fashion	Paimpol	United States	Clothing (Brand)	accessories	1
+415	car	Los Angeles	United States	Cars	accessories	1
+416	food	Rome	Russia	Personal Blog	fashion	0
+417	design	Damery	Myanmar	TV Show	car	1
+418	lifestyle	Roma	Italy	Website	food	3
+419	accessories	Jersey City	United States	Jewelry/Watches	accessories	3
+420	food	Bridgehampton	Germany	Personal Website	accessories	1
+421	beauty	Cuorgnè	Italy	Hair Extensions Service	hair	3
+422	accessories	Caprino Veronese	Italy	Community	fashion	2
+423	car	Fawkham	United Kingdom	Shopping & Retail	accessories	1
+424	fashion	Barcelona	Malaysia	Personal Blog	fashion	0
+425	hair	New Delhi	United States	Personal Blog	accessories	1
+426	design	Warszawa, Poland	Algeria	Magazine	accessories	1
+427	food	Bangalore	Russia	Community	fashion	0
+428	accessories	Caprino Veronese	Germany	Website	accessories	3
+429	car	Modena	Italy	Transportation Service	fashion	2
+430	fashion	London	United Kingdom	Clothing (Brand)	fashion	0
+431	fashion	Orlando	United States	Cars	beauty	1
+432	fashion	Montevarchi	Canada	Website	fashion	0
+433	fashion	Buenos Aires	Italy	Personal Website	car	0
+434	hair	Wetzikon	Italy	Cars	fashion	2
+435	car	Dublin	Belgium	Cars	food	1
+436	fashion	New York	Italy	Just For Fun	food	0
+437	design	Glasgow	United Kingdom	Lawyer & Law Firm	fashion	0
+438	fashion	Modena	Italy	Community	fashion	0
+439	food	Varazze	Italy	Hair Salon	design	3
+440	accessories	PiotrkÃ³w Trybunalski	Poland	Brand	fashion	2
+441	fashion	Bridgehampton	Greece	Community	design	1
+442	car	Verona	Italy	Car Rental	food	3
+443	design	Palermo	Greece	Community	fashion	0
+444	fashion	Senigallia	Italy	Phone/Tablet	design	1
+445	fashion	Warsaw	United States	Blogger	fashion	0
+446	fashion	Oakland	United Kingdom	Blogger	car	1
+447	luxury	Los Angeles	United States	Media/News Company	blog	1
+448	hair	Turin	United States	Website	fashion	0
+449	fashion	New York	France	Community	car	1
+450	accessories	Casalecchio di Reno	Italy	Health/Beauty	blog	3
+451	fashion	Milan	Italy	Blogger	fashion	0
+452	food	Sydney	United States	Kitchen/Cooking	design	1
+453	beauty	Austin	United States	Society & Culture Website	design	1
+454	design	Kalamazoo	United States	Local Business	beauty	1
+455	design	Hangzhou	China	Company	fashion	0
+456	fashion	Rome	United States	Community	blog	1
+457	fashion	Cascais	Portugal	Clothing Store	fashion	0
+458	blog	Gardena	Italy	Community	fashion	2
+459	accessories	Steinbrunn-le-Bas	France	Local Business	design	3
+460	accessories	Quebec	Canada	Clothing Store	accessories	3
+461	fashion	Warsaw	Germany	Nonprofit Organization	fashion	0
+462	accessories	Damery	China	Bags/Luggage	fashion	2
+463	car	Piacenza	United States	Photographer	beauty	1
+464	fashion	Paimpol	Switzerland	Local & Travel Website	food	1
+465	food	North Vancouver	Italy	Jewelry/Watches	accessories	3
+466	accessories	PiotrkÃ³w Trybunalski	Italy	Clothing (Brand)	fashion	2
+467	fashion	Sant'Arcangelo di Romagna	Malaysia	Personal Blog	fashion	0
+468	fashion	Adelaide	Australia	Professional Service	fashion	0
+469	fashion	Madrid	Italy	Sports Team	fashion	0
+470	fashion	Dubai	United Arab Emirates	Shopping Mall	accessories	1
+471	fashion	Palermo	Italy	Website	design	1
+472	design	Buenos Aires	United States	Website	design	1
+473	blog	Los Angeles	Portugal	Bags/Luggage	design	1
+474	fashion	Otley	United Kingdom	Insurance Broker	fashion	0
+475	accessories	Milan	Italy	Live & Raw Food Restaurant	fashion	2
+476	beauty	North Vancouver	United Kingdom	Jewelry/Watches	fashion	0
+477	blog	Milan	Italy	Fashion Designer	design	3
+478	fashion	Rome	Italy	Broadcasting & Media Production Company	fashion	0
+479	fashion	Huntingdon	Poland	Public Figure	blog	1
+480	fashion	Modena	United Kingdom	Public Figure	fashion	0
+481	car	Paris	France	Motor Vehicle Company	accessories	1
+482	fashion	Cuorgnè	Switzerland	Blogger	design	1
+483	fashion	Jersey City	United Arab Emirates	Website	design	1
+484	fashion	Los Angeles	Italy	Clothing (Brand)	accessories	1
+485	fashion	Rome	Algeria	Community	fashion	0
+486	fashion	Milan	Spain	Food & Beverage Company	fashion	0
+487	luxury	Ilhéus	Brazil	Jewelry/Watches	fashion	0
+488	food	Turin	Italy	Greek Restaurant	food	3
+489	car	Los Angeles	United States	Tire Dealer & Repair Shop	accessories	1
+490	fashion	Montreal	United States	Clothing (Brand)	design	1
+491	fashion	Bridgehampton	Argentina	Musician/Band	car	1
+492	car	Naples	United States	Cars	accessories	1
+493	fashion	North Miami	India	Product/Service	fashion	0
+494	fashion	San Diego	Poland	Health/Beauty	fashion	0
+495	accessories	Casalecchio di Reno	Portugal	Website	accessories	3
+496	accessories	Bernareggio	Italy	Clothing (Brand)	fashion	2
+497	accessories	Vyborg	Russia	Tour Guide	fashion	2
+498	accessories	Swindon	United States	Community	accessories	3
+499	accessories	Ilhéus	Italy	Cars	accessories	3
+500	design	Termoli	Italy	Public Figure	fashion	2
+501	fashion	SÃ£o JosÃ©	Brazil	Clothing (Brand)	fashion	0
+502	fashion	Wallaroo S.A.	Italy	Medical & Health	fashion	0
+503	car	Catania	Italy	Community	car	3
+504	accessories	Milan	Italy	Magazine	fashion	2
+505	fashion	Brescia	United States	Cars	car	1
+506	accessories	Wallaroo S.A.	Canada	Community	fashion	2
+507	fashion	Sydney	Australia	Fitness Model	fashion	0
+508	fashion	Paris	France	Clothing (Brand)	accessories	1
+509	accessories	Bucharest	United States	Public Figure	fashion	2
+510	accessories	Batna	Algeria	Jewelry/Watches	fashion	2
+511	design	Brooklyn	United States	Cars	design	1
+512	design	Montevarchi	Italy	Clothing (Brand)	accessories	3
+513	fashion	Bridgehampton	United States	Health/Beauty	car	1
+514	accessories	Madrid	United Kingdom	Pizza Place	food	3
+515	design	Kuweit	Canada	Organization	accessories	1
+516	design	New Orleans	Italy	Community	accessories	3
+517	accessories	Frankfurt	Italy	Magazine	fashion	2
+518	hair	Parabiago (MI) Italy	United States	Fashion Company	fashion	0
+519	design	Minsk Mazowiecki	Spain	Community	fashion	0
+520	fashion	Erbusco	United States	Other	accessories	1
+521	fashion	Milan	Canada	Local Business	accessories	1
+522	food	Parabiago	Argentina	Coach	car	1
+523	accessories	Milan	Belgium	Community	fashion	2
+524	accessories	Bristol	Argentina	Website	car	3
+525	design	Madrid	Italy	Website	beauty	3
+526	fashion	Mirandola	United States	Public Figure	fashion	0
+527	beauty	Madrid	Spain	Health/Beauty	accessories	1
+528	accessories	Huntingdon	Italy	Just For Fun	accessories	3
+529	food	Moscow	Russia	Car Dealership	food	1
+530	design	Mondo	Poland	Product/Service	fashion	0
+531	beauty	Forest Hills	United States	Public Figure	design	1
+532	design	North Vancouver	Italy	Personal Blog	accessories	3
+533	car	Damery	Italy	Community	accessories	3
+534	fashion	Termoli	United States	Personal Blog	accessories	1
+535	food	Benin-City	Spain	Kitchen/Cooking	food	1
+536	blog	RÃ©gioun Musel an EmgÃ©igend	United States	Photographer	hair	1
+537	food	Roma	Belgium	Personal Blog	fashion	0
+538	accessories	Rome	Italy	Health/Beauty	design	3
+539	beauty	Montecalvoli	United States	Automotive Parts Store	design	1
+540	fashion	Atlanta	United States	Image Consultant	accessories	1
+541	fashion	Gardena	Italy	Community	fashion	0
+542	hair	Quebec	United Kingdom	Home Decor	fashion	0
+543	food	Tel Aviv	Israel	Business Service	fashion	0
+544	beauty	Dublin	Ireland	Health/Beauty	beauty	1
+545	fashion	Forest Hills	Belgium	Fashion	design	1
+546	accessories	Perth	United States	Musician/Band	fashion	2
+547	fashion	Palermo	Canada	TV Show	design	1
+548	design	Damery	India	Sewer Service	fashion	0
+549	design	le beausset	Portugal	Local Business	design	1
+550	accessories	Madrid	Portugal	Community	design	3
+551	fashion	Paris	Italy	Community	accessories	1
+552	accessories	Dubai	United States	Marketing Consultant	fashion	2
+553	design	Tel Aviv	Israel	Design & Fashion	design	1
+554	accessories	Penang	Malaysia	Restaurant	food	3
+555	accessories	Bernareggio	Italy	Health/Beauty	accessories	3
+556	design	Los Angeles	United States	Clothing (Brand)	fashion	0
+557	blog	Milan	France	Recreation & Sports Website	fashion	0
+558	design	London	United Kingdom	Home Decor	fashion	0
+559	accessories	Dhaka	Bangladesh	Clothing Store	fashion	2
+560	fashion	Brussels	Italy	Arts & Humanities Website	fashion	0
+561	accessories	Senigallia	Italy	Local Business	accessories	3
+562	beauty	SÃ£o JosÃ©	Germany	Clothing (Brand)	accessories	1
+563	design	Szczecin	Poland	Interior Design Studio	design	1
+564	accessories	Czestochowa	Poland	Clothing (Brand)	fashion	2
+565	accessories	Pompei	Malaysia	Website	accessories	3
+566	fashion	New Orleans	Argentina	Retail Company	accessories	1
+567	accessories	Trutnov	Czech Republic	Media	accessories	3
+568	fashion	Collingwood	Canada	Cleaning Service	fashion	0
+569	fashion	Miami	United States	Community	design	1
+570	fashion	Miami	United States	Clothing (Brand)	fashion	0
+571	blog	Hangzhou	Spain	Personal Blog	fashion	0
+572	accessories	Bernareggio	Italy	Beauty Salon	design	3
+573	accessories	SÃ£o Paulo	Brazil	Photographer	fashion	2
+574	beauty	Fullerton	United States	Weight Loss Center	fashion	0
+575	fashion	Turin	Italy	Restaurant	food	0
+576	accessories	New York	Germany	Actor	food	3
+577	blog	Rome	Italy	American Restaurant	accessories	3
+578	fashion	KrakÃ³w	Poland	Photographer	design	1
+579	accessories	Kennett Square	United States	Jewelry & Watches Store	accessories	3
+580	design	Beverly Hills	United Kingdom	Personal Blog	car	1
+581	fashion	London	Brazil	Community	accessories	1
+582	accessories	MstÃ³w	Poland	Footwear Store	accessories	3
+583	design	Bangalore	Switzerland	Product/Service	design	1
+584	design	Burlington	United Kingdom	Food & Beverage Company	accessories	1
+585	fashion	Frankfurt	Brazil	Website	food	1
+586	fashion	Los Angeles	Italy	Cars	car	0
+587	design	Fullerton	Spain	Health/Beauty	design	1
+588	fashion	Milan	Italy	Gym/Physical Fitness Center	design	1
+589	food	Dhaka	United States	Cars	blog	1
+590	food	Turin	Italy	Blogger	fashion	2
+591	accessories	Buenos Aires	Argentina	City	accessories	3
+592	hair	Rome	Italy	Food & Beverage Company	blog	3
+593	design	Minsk Mazowiecki	Poland	Wholesale & Supply Store	design	1
+594	fashion	Perth	Italy	Personal Blog	fashion	0
+595	accessories	Cheras, Kuala Lumpur	Malaysia	Community	fashion	2
+596	fashion	Naples	Italy	News & Media Website	blog	0
+597	blog	Rome	Italy	Movie Theater	design	3
+598	food	Rome	Italy	Jewelry/Watches	accessories	3
