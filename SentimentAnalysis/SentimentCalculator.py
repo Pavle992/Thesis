@@ -4,7 +4,7 @@ import re
 from googletrans import Translator
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import json
-
+from SpamFilter import SpamFilter
 
 class SentimentCalculator:
 	
@@ -160,5 +160,3 @@ class SentimentCalculator:
 	        return False
 	    else:
 	        return True
-	
-
