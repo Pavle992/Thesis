@@ -1,4 +1,6 @@
 import matplotlib.pyplot as plt
+from matplotlib.colors import ListedColormap
+import numpy as np
 
 class Plotter(object):
 
@@ -28,3 +30,47 @@ class Plotter(object):
 
 	def setRowsCols(self, rows, cols):
 		self.fig, self.axes = plt.subplots(nrows=rows, ncols=cols)
+
+	def scatter(self, c_data, x_label='x', y_label='y'):
+
+		fig = plt.figure()
+		ax = fig.add_subplot(111)
+		scatter = ax.scatter(self.df[:, 0], self.df[:, 1], c=c_data, cmap=ListedColormap(('red', 'green', 'blue')), s=50)
+		ax.set_xlabel(x_label)
+		ax.set_ylabel(y_label)
+		plt.show(fig)
+
+from scipy.spatial.distance import cdist, pdist
+from sklearn.cluster import KMeans
+
+def KneeElbowAnalysis(x,max_k=11):
+    k_values = range(1,max_k)
+    clusterings = [KMeans(n_clusters=k, random_state=0).fit(x) for k in k_values]
+    centroids = [clustering.cluster_centers_ for clustering in clusterings]
+
+    D_k = [cdist(x, cent, 'euclidean') for cent in centroids]
+    cIdx = [np.argmin(D,axis=1) for D in D_k]
+    dist = [np.min(D,axis=1) for D in D_k]
+    avgWithinSS = [sum(d)/x.shape[0] for d in dist]
+
+    # Total with-in sum of square
+    wcss = [sum(d**2) for d in dist]
+
+    tss = sum(pdist(x)**2)/x.shape[0]
+    bss = tss-wcss
+
+    kIdx = 10-1    
+    #
+    # elbow curve
+    #
+    fig = plt.figure()
+    font = {'family' : 'sans', 'size'   : 12}
+    plt.rc('font', **font)
+    plt.plot(k_values, wcss, 'bo-', color='red', label='WCSS')
+    plt.plot(k_values, bss, 'bo-', color='blue', label='BCSS')
+    plt.grid(True)
+    plt.xlabel('Number of clusters')
+    plt.legend()
+    plt.title('Knee for KMeans clustering');
+
+    plt.show()
