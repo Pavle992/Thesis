@@ -23,12 +23,11 @@ def checkSpam(text):
     else:
         return True
 
-
-dataset1 = pd.read_csv('./YouTube-Spam-Collection-v1/Youtube01-Psy.csv', sep=',')
-dataset2 = pd.read_csv('./YouTube-Spam-Collection-v1/Youtube02-KatyPerry.csv', sep=',')
-dataset3 = pd.read_csv('./YouTube-Spam-Collection-v1/Youtube03-LMFAO.csv', sep=',')
-dataset4 = pd.read_csv('./YouTube-Spam-Collection-v1/Youtube04-Eminem.csv', sep=',')
-dataset5 = pd.read_csv('./YouTube-Spam-Collection-v1/Youtube05-Shakira.csv', sep=',')
+dataset1 = pd.read_csv('./res/train_dataset/YouTube-Spam-Collection-v1/Youtube01-Psy.csv', sep=',')
+dataset2 = pd.read_csv('./res/train_dataset/YouTube-Spam-Collection-v1/Youtube02-KatyPerry.csv', sep=',')
+dataset3 = pd.read_csv('./res/train_dataset/YouTube-Spam-Collection-v1/Youtube03-LMFAO.csv', sep=',')
+dataset4 = pd.read_csv('./res/train_dataset/YouTube-Spam-Collection-v1/Youtube04-Eminem.csv', sep=',')
+dataset5 = pd.read_csv('./res/train_dataset/YouTube-Spam-Collection-v1/Youtube05-Shakira.csv', sep=',')
 
 dataset1 = dataset1.iloc[:, 3:]
 dataset2 = dataset2.iloc[:, 3:]
@@ -58,26 +57,22 @@ tokenizer = RegexpTokenizer(r'\w+')
 
 
 def preprocess(sentence):
-
     lemmatizer = WordNetLemmatizer()
     return [lemmatizer.lemmatize(word.lower()) for word in tokenizer.tokenize(sentence) if word not in stop]
 
-
-# print(preprocess(dataset.iloc[1, 0]))
 import nltk
 
 for comment in dataset.iloc[:, 0]:
     all_words.extend(preprocess(comment))
 
-# print(all_words[:100])
 all_words = nltk.FreqDist(all_words)
-#
+
 word_features = list(all_words.keys())[:100]
 print(word_features)
 
 import pickle
 
-with open('word_features', 'wb') as fp:
+with open('./res/word_features', 'wb') as fp:
     pickle.dump(word_features, fp)
 
 
@@ -92,14 +87,10 @@ def find_features(comment):
 
     return features
 
-
-# print(find_features(dataset.iloc[0, 0]))
-
 X_train = pd.DataFrame(0, index=np.arange(dataset.shape[0]), columns=word_features)
-print(X_train.shape)
-# X_train.iloc[0, 0] = pd.DataFrame(find_features(dataset.iloc[0, 0]))
-i = 0
 
+
+i = 0
 for row in dataset.iloc[:, 0]:
     feature_vect = find_features(row)
     X_train.iloc[i, :] = pd.Series(feature_vect)
@@ -136,4 +127,4 @@ print(prec)
 
 from sklearn.externals import joblib
 
-joblib.dump(classifier, 'spam_classifier.joblib.pkl', compress=9)
+joblib.dump(classifier, './res/spam_classifier.joblib.pkl', compress=9)

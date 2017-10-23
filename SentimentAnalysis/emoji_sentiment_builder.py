@@ -1,6 +1,6 @@
 import json
 
-with open('emoji-sentiment-data.json') as data_file:    
+with open('./res/emoji/emoji-sentiment-data.json') as data_file:
     data = json.load(data_file)
 
 emojiScores = {}
@@ -24,9 +24,5 @@ for emojiDatum in data:
 
 print(emojiScores['1F4D4'])
 
-with open('emoji-sentiment.json', 'w') as output:
+with open('./res/emoji-sentiment.json', 'w') as output:
     json.dump(emojiScores, output, indent=4)
-
-
-
-

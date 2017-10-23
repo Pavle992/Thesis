@@ -4,17 +4,14 @@ import re
 from googletrans import Translator
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import json
-
-#TODO fix this
-import SpamFilter as sf
-
+from SpamFilter import SpamFilter
 
 class SentimentCalculator:
 
     def __init__(self):
         with open('./res/emoji-sentiment.json', 'r') as fp:
             self.emojiSentData = json.load(fp)
-        self.spam_filter = sf.SpamFilter()
+        self.spam_filter = SpamFilter()
 
     def __translate(self, text, targetLng='en'):
         gt = Translator()
@@ -43,11 +40,8 @@ class SentimentCalculator:
 
             emUnicode = hex(ord(em))[2:].upper()
             if (i != 0):
-
                 if (emUnicode == prevEmUnicode):
-
                     sameEmojiCount += 1
-
                     if (sameEmojiCount % 3 == 0):
                         increas = True
                 else:
@@ -151,4 +145,4 @@ class SentimentCalculator:
         return summedSent
 
     def checkSpam(self, commentText):
-        return self.spam_filter(commentText)
+        return self.spam_filter.checkSpam(commentText)
