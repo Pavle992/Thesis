@@ -16,4 +16,4 @@ s = SentimentCalculator()
 # sisi diffic sporcar , vosevo dervila così in questa Modo,,,
 # Virgoline virgoline cccccc
 
-print(s.checkSpam("Great!"))
+print(s.checkSpam("Great video guys"))

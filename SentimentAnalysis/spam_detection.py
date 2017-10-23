@@ -23,11 +23,11 @@ def checkSpam(text):
     else:
         return True
 
-dataset1 = pd.read_csv('./res/train_dataset/YouTube-Spam-Collection-v1/Youtube01-Psy.csv', sep=',')
-dataset2 = pd.read_csv('./res/train_dataset/YouTube-Spam-Collection-v1/Youtube02-KatyPerry.csv', sep=',')
-dataset3 = pd.read_csv('./res/train_dataset/YouTube-Spam-Collection-v1/Youtube03-LMFAO.csv', sep=',')
-dataset4 = pd.read_csv('./res/train_dataset/YouTube-Spam-Collection-v1/Youtube04-Eminem.csv', sep=',')
-dataset5 = pd.read_csv('./res/train_dataset/YouTube-Spam-Collection-v1/Youtube05-Shakira.csv', sep=',')
+dataset1 = pd.read_csv('./res/train_dataset/Youtube01-Psy.csv', sep=',')
+dataset2 = pd.read_csv('./res/train_dataset/Youtube02-KatyPerry.csv', sep=',')
+dataset3 = pd.read_csv('./res/train_dataset/Youtube03-LMFAO.csv', sep=',')
+dataset4 = pd.read_csv('./res/train_dataset/Youtube04-Eminem.csv', sep=',')
+dataset5 = pd.read_csv('./res/train_dataset/Youtube05-Shakira.csv', sep=',')
 
 dataset1 = dataset1.iloc[:, 3:]
 dataset2 = dataset2.iloc[:, 3:]
@@ -67,12 +67,12 @@ for comment in dataset.iloc[:, 0]:
 
 all_words = nltk.FreqDist(all_words)
 
-word_features = list(all_words.keys())[:100]
+word_features = list(all_words.keys())[:500]
 print(word_features)
 
 import pickle
 
-with open('./res/word_features', 'wb') as fp:
+with open('./res/word_features1', 'wb') as fp:
     pickle.dump(word_features, fp)
 
 

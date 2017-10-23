@@ -19,7 +19,7 @@ import re
 class SpamFilter:
 
     def __init__(self):
-        with open ('./res/word_features', 'rb') as fp:
+        with open ('./res/word_features1', 'rb') as fp:
             self.word_features = pickle.load(fp)
 
         flt = ['[', ']', '.', ',', ':', ';', '(', ')', 'i', 'u']
