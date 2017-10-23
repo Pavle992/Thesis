@@ -5,156 +5,150 @@ from googletrans import Translator
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import json
 
+#TODO fix this
+import SpamFilter as sf
+
 
 class SentimentCalculator:
-	
-	
-	def __init__(self):
-		with open('./res/emoji-sentiment.json', 'r') as fp:
-			self.emojiSentData = json.load(fp)
-		
-	def __translate(self, text, targetLng = 'en'):
-		gt = Translator()
-		translation = gt.translate(text, dest = targetLng)
-		
-		return translation.text
 
-	def __getSentiment(self, text):
-		analyzer = SentimentIntensityAnalyzer()
-		result = analyzer.polarity_scores(text)
+    def __init__(self):
+        with open('./res/emoji-sentiment.json', 'r') as fp:
+            self.emojiSentData = json.load(fp)
+        self.spam_filter = sf.SpamFilter()
 
-		return result
+    def __translate(self, text, targetLng='en'):
+        gt = Translator()
+        translation = gt.translate(text, dest=targetLng)
 
-	def __getEmojiSentiment(self, emojis):
+        return translation.text
 
-		if len(emojis) == 0:
-			return 0
+    def __getSentiment(self, text):
+        analyzer = SentimentIntensityAnalyzer()
+        result = analyzer.polarity_scores(text)
 
-		result = 0
-		sameEmojiCount = 1
-		prevEmUnicode = ""
-		i = 0
-		increas = False
+        return result
 
-		for em in emojis:
+    def __getEmojiSentiment(self, emojis):
 
-			emUnicode = hex(ord(em))[2:].upper()
-			if (i != 0):
-				
-				if (emUnicode == prevEmUnicode):
+        if len(emojis) == 0:
+            return 0
 
-					sameEmojiCount += 1
-	
-					if (sameEmojiCount % 3 == 0):
-						increas = True
-				else:
-					sameEmojiCount = 1
+        result = 0
+        sameEmojiCount = 1
+        prevEmUnicode = ""
+        i = 0
+        increas = False
 
+        for em in emojis:
 
-			prevEmUnicode = emUnicode
-			i += 1
+            emUnicode = hex(ord(em))[2:].upper()
+            if (i != 0):
 
-			try:
-				result += self.emojiSentData[emUnicode]
+                if (emUnicode == prevEmUnicode):
 
-				if (increas):
-					if (result > 0):
-						result+=0.5
-					else:
-						result-=0.5
+                    sameEmojiCount += 1
 
-					increas = False
-			except Exception:
-				return 0
-			
-		
-		result /= len(emojis)
+                    if (sameEmojiCount % 3 == 0):
+                        increas = True
+                else:
+                    sameEmojiCount = 1
 
-		if (result > 1):
-			return 1
+            prevEmUnicode = emUnicode
+            i += 1
 
-		return result
+            try:
+                result += self.emojiSentData[emUnicode]
 
-	def __getCombinedSentiment(self, textSent, emojiSent):
-		emojiRegularization = 0 #1 if very important
+                if (increas):
+                    if (result > 0):
+                        result += 0.5
+                    else:
+                        result -= 0.5
 
-		if emojiRegularization != 0:
-			comb = (textSent + emojiRegularization * emojiSent)/2
-		else:
-			comb = textSent
+                    increas = False
+            except Exception:
+                return 0
 
-		return comb
+        result /= len(emojis)
 
-	def __sanitize(self, text):
-		return text.replace(',', '')
+        if (result > 1):
+            return 1
 
-	def __calcSentiment(self, text):
+        return result
 
-		print('################################################')
+    def __getCombinedSentiment(self, textSent, emojiSent):
+        emojiRegularization = 0  # 1 if very important
 
-		emoji_pattern = re.compile(u'['
-			u'\U0001F300-\U0001F64F'
-    		u'\U0001F680-\U0001F6FF'
-    		u'\u2600-\u26FF\u2700-\u27BF]', 
-    		re.UNICODE)
-		
-		postContent = {}
-		 
-		m = emoji_pattern.findall(text)
-		postContent['emojis'] = m
-		postContent['text'] = re.sub(emoji_pattern, '',text)
-		postContent['text'] = self.__sanitize(postContent['text'])
+        if emojiRegularization != 0:
+            comb = (textSent + emojiRegularization * emojiSent) / 2
+        else:
+            comb = textSent
 
-		if (postContent['emojis']):
-			print('emojis found: %s' %postContent['emojis'])
-		print('text found: %s' %postContent['text'])
+        return comb
 
-		postContent['text'] = self.__translate(postContent['text'])
-		
-		print('translated text: %s' %postContent['text'])
+    def __sanitize(self, text):
+        return text.replace(',', '')
 
-		sent = {}
+    def __calcSentiment(self, text):
 
-		sent['text'] = self.__getSentiment(postContent['text'])
-		print('sentiment for text: %s' %sent['text']['compound'])
-		sent['emojis'] = self.__getEmojiSentiment(postContent['emojis'])
-		print('sentiment for emojis: %s' %sent['emojis'])
-		sent['combined'] = self.__getCombinedSentiment(sent['text']['compound'], sent['emojis'])
-		print('sentiment combined: %s' %sent['combined'])
-		print('################################################')
+        print('################################################')
 
-		return sent
-	
-	def calcSummedSentiment(self, listOfComments):
-		numOfRows = len(listOfComments)
+        emoji_pattern = re.compile(u'['
+                                   u'\U0001F300-\U0001F64F'
+                                   u'\U0001F680-\U0001F6FF'
+                                   u'\u2600-\u26FF\u2700-\u27BF]',
+                                   re.UNICODE)
 
-		summedSent = {'text' : 0.0, 'emojis': 0.0, 'combined': 0.0}
+        postContent = {}
 
-		for comment in listOfComments:
-			print(comment)
-			if (self.checkSpam(comment)):
-				numOfRows = numOfRows - 1;
-				continue
+        m = emoji_pattern.findall(text)
+        postContent['emojis'] = m
+        postContent['text'] = re.sub(emoji_pattern, '', text)
+        postContent['text'] = self.__sanitize(postContent['text'])
 
-			sentScore = self.__calcSentiment(comment)
-			summedSent['text'] += sentScore['text']['compound']
-			summedSent['emojis'] += sentScore['emojis']
-			summedSent['combined'] += sentScore['combined']
+        if (postContent['emojis']):
+            print('emojis found: %s' % postContent['emojis'])
+        print('text found: %s' % postContent['text'])
 
-		if (numOfRows != 0):
-			summedSent['text'] /= numOfRows
-			summedSent['emojis'] /= numOfRows
-			summedSent['combined'] /= numOfRows
+        postContent['text'] = self.__translate(postContent['text'])
 
-		print(summedSent)
-		return summedSent
+        print('translated text: %s' % postContent['text'])
 
-	def checkSpam(self, commentText):
-	    spam_pattern = "http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+"
-	    result = re.findall(spam_pattern, commentText)
-	    if len(result) == 0:
-	        return False
-	    else:
-	        return True
-	
+        sent = {}
 
+        sent['text'] = self.__getSentiment(postContent['text'])
+        print('sentiment for text: %s' % sent['text']['compound'])
+        sent['emojis'] = self.__getEmojiSentiment(postContent['emojis'])
+        print('sentiment for emojis: %s' % sent['emojis'])
+        sent['combined'] = self.__getCombinedSentiment(sent['text']['compound'], sent['emojis'])
+        print('sentiment combined: %s' % sent['combined'])
+        print('################################################')
+
+        return sent
+
+    def calcSummedSentiment(self, listOfComments):
+        numOfRows = len(listOfComments)
+
+        summedSent = {'text': 0.0, 'emojis': 0.0, 'combined': 0.0}
+
+        for comment in listOfComments:
+            print(comment)
+            if (self.checkSpam(comment)):
+                numOfRows = numOfRows - 1
+                continue
+
+            sentScore = self.__calcSentiment(comment)
+            summedSent['text'] += sentScore['text']['compound']
+            summedSent['emojis'] += sentScore['emojis']
+            summedSent['combined'] += sentScore['combined']
+
+        if (numOfRows != 0):
+            summedSent['text'] /= numOfRows
+            summedSent['emojis'] /= numOfRows
+            summedSent['combined'] /= numOfRows
+
+        print(summedSent)
+        return summedSent
+
+    def checkSpam(self, commentText):
+        return self.spam_filter(commentText)

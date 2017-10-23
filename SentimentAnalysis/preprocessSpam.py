@@ -41,7 +41,6 @@ stop.extend(flt)
 
 from nltk.tokenize import RegexpTokenizer
 
-all_words = []
 tokenizer = RegexpTokenizer(r'\w+')
 
 
@@ -74,4 +73,4 @@ def checkSpamBayes(text):
         return True
 
 
-print(checkSpam("Great performance"))
+print(checkSpam("Beautify"))
