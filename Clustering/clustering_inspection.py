@@ -56,5 +56,5 @@ plotter.plot(columns=[' description'], clusterNum=3)
 # about : Accessories
 # country: Italy
 # city: Rome
-# category: Clothing (Brand)
-# description: Accessories
+# category: Website
+# description: Design
