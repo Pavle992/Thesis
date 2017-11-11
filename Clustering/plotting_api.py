@@ -35,7 +35,7 @@ class Plotter(object):
 
 		fig = plt.figure()
 		ax = fig.add_subplot(111)
-		scatter = ax.scatter(self.df[:, 0], self.df[:, 1], c=c_data, cmap=ListedColormap(('red', 'green', 'blue')), s=50)
+		scatter = ax.scatter(self.df[:, 0], self.df[:, 1], c=c_data, cmap=ListedColormap(('red', 'green', 'blue', 'yellow')), s=50)
 		ax.set_xlabel(x_label)
 		ax.set_ylabel(y_label)
 		plt.show(fig)
