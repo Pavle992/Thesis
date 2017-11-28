@@ -26,7 +26,7 @@ fb = FacebookAPI(token=fb_token)
 fb.connect()
 
 # Inserting users data in db
-for counter, uid in enumerate(user_ids[204300:]):
+for counter, uid in enumerate(user_ids):
     fu = fb.request(ids=[uid])
     if fu is not None:
         fu['idpost'] = str(user_post[uid])

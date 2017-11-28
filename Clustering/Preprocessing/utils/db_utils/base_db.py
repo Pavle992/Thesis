@@ -1,4 +1,4 @@
-import MySQLdb
+import MySQLdb # pip install mysqlclient # command to support python 3.6.1
 from sqlalchemy import create_engine, exc
 from sqlalchemy.pool import SingletonThreadPool
 import pandas as pd

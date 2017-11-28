@@ -1,5 +1,5 @@
 from .base_api import BaseAPI
-import facebook
+import facebook # pip freeze | grep face # command to support python 3.6.1
 
 class FacebookAPI(BaseAPI):
 	def __init__(self, token=''):
@@ -14,7 +14,7 @@ class FacebookAPI(BaseAPI):
 		try:
 			self.response = self.graph.request('/?ids=%s&fields=%s' % (ids_string, fields))
 			if len(self.response.items()) == 1:
-				return self.format_json(self.response[ids[0]])
+				return self.__format_json(self.response[ids[0]])
 				# return self.response
 			elif len(self.response.items()) > 1:
 				return self.response
@@ -22,7 +22,7 @@ class FacebookAPI(BaseAPI):
 			#print("Id dont exist or need permission")
 			pass
 
-	def format_json(self, jsn):
+	def __format_json(self, jsn):
 	    acc_val = {'city', 'country', 'zip'}
 	    new_jsn = {}
 	    for key, value in jsn.items():
