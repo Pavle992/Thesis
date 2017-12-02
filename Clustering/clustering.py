@@ -2,15 +2,15 @@ import numpy as np
 import pandas as pd
 
 
-dataset = pd.read_csv('user_social.csv', sep='\t')
-
+dataset = pd.read_csv('user_social_new.csv', sep='\t')
+ids = dataset[' user_id'].copy()
 #remove index
-dataset = dataset.iloc[:, 1:]
+dataset = dataset.iloc[:, 2:]
 #remove last three columns (birthday)
 dataset = dataset.iloc[:, :-3]
 #remove email column
 dataset = dataset.drop(' emails', 1)
-
+dataset = dataset.drop(' user_id', 1)
 #filling missing values
 dataset.info()
 
@@ -51,8 +51,8 @@ s = dataset[' description'].value_counts(normalize=True)
 missing = dataset[' description'].isnull()
 dataset.loc[missing,' description'] = np.random.choice(s.index, size=len(dataset[missing]),p=s.values)
 
-datasetCategorical = dataset
 df = dataset.copy()
+datasetCategorical = dataset
 
 #encoding categorical values
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
@@ -86,7 +86,7 @@ labels = kmeans.labels_
 #append cluster labels to datasetCategorical
 datasetCategorical.loc[:, ' cluster'] = labels
 df.loc[:, ' cluster'] = labels
-
+df.loc[:, ' user_id'] = ids
 # print(datasetCategorical.head(20))
 
 from plotting_api import Plotter
@@ -94,12 +94,5 @@ from plotting_api import Plotter
 plotter = Plotter(X_transformed)
 plotter.scatter(c_data=labels, x_label='PC1', y_label='PC2')
 
-# datasetCategorical.to_csv('user_social_categorical_clustered.csv', sep='\t', encoding='utf-8')
-# df.to_csv('user_social_clustered.csv', sep='\t', encoding='utf-8')
-
-
-
-
-
-
-
+datasetCategorical.to_csv('user_social_categorical_clustered.csv', sep='\t', encoding='utf-8')
+df.to_csv('user_social_clustered_new.csv', sep='\t', encoding='utf-8')

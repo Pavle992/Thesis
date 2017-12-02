@@ -45,6 +45,19 @@ def getAllCommentsForPost(idpost):
 
 	return flattenedResult
 
+def getAllCommentsForUser(idpost):
+	conn = db_connect()
+	query = 'select content from im_commento where from_id = %d' %idpost
+	cur = doQuery(conn, query)
+
+	results = cur.fetchall()
+	
+	flattenedResult = [r[0] for r in results]
+
+	db_close(conn)
+
+	return flattenedResult
+
 def insertSentForPost(idpost, sent):
 	#TODO: check if the postid already exists
 	

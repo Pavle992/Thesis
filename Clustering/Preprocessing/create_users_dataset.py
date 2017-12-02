@@ -11,7 +11,7 @@ db_name = 'sentiment_db'
 sentiment_db = Database(host=hostname, port=port_num, user=username, passwd=password, db=db_name)
 sentiment_db.connect()
 
-user_social = sentiment_db.fetch_all(select='birthday, about, emails, city, country, category, description', from_clause='user_social',data_as_dataframe=True)
+user_social = sentiment_db.fetch_all(select='birthday, about, emails, city, country, category, description, user_id', from_clause='user_social',data_as_dataframe=True)
 
 # About and Description coulms tokenization and categorization
 from utils.text_processing_utils.categoryCalculation import CategorySimilarity
@@ -40,4 +40,4 @@ user_social['month'] = user_social['birthday'].apply(lambda x: int(x.split('/')[
 user_social['year'] = user_social['birthday'].apply(lambda x: int(x.split('/')[2]) if x is not None else None)
 
 # Saving preprocessed dataset
-user_social.to_csv('user_social.csv', sep='\t', encoding='utf-8')
+# user_social.to_csv('user_social_new.csv', sep='\t', encoding='utf-8')
